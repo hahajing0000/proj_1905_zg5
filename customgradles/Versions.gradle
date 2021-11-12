@@ -1,0 +1,11 @@
+ext{
+    versions=[
+            compileSdkVersion:30,
+            buildToolsVersion:"30.0.3",
+            minSdkVersion:16,
+            targetSdkVersion:30,
+            appcompatVersion:"1.2.0",
+
+            constraintlayout:"2.0.4"
+    ]
+}

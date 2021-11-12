@@ -1,2 +1,6 @@
+include ':Resource'
+include ':UserCenter'
+include ':Utils'
+include ':MVVMCore'
 include ':app'
 rootProject.name = "MVVMZG51905"

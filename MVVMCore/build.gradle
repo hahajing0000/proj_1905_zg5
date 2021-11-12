@@ -1,19 +1,17 @@
-apply plugin: 'com.android.application'
-
-def libs=rootProject.ext.dependencies;
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion versions.compileSdkVersion
     buildToolsVersion versions.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.zy.mvvm"
         minSdkVersion versions.minSdkVersion
         targetSdkVersion versions.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -30,10 +28,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "androidx.appcompat:appcompat:$versions.appcompatVersion"
-    implementation libs.constraintlayout
+    implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation project(path: ':Utils')
-    implementation project(path: ':Resource')
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

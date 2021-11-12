@@ -1,0 +1,12 @@
+ext{
+    dependencies=[
+            constraintlayout:"androidx.constraintlayout:constraintlayout:$versions.constraintlayout",
+            
+    ]
+
+    urls=[
+            DevServer:"http://192.168.0.1/",
+            OnLineServer:"http://192.168.0.2/",
+            TestServer:"http://192.168.0.3/"
+    ]
+}
