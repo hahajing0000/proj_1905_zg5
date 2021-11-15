@@ -1,6 +1,10 @@
 package com.zy.usercenter;
 
 import com.zy.utils.MyApplication;
+import com.zy.utils.log.LogStrategy;
+import com.zy.utils.log.LogType;
+import com.zy.utils.log.LogUtils;
+import com.zy.utils.log.Logger;
 
 /**
  * @ProjectName: MVVMZG51905
@@ -15,4 +19,16 @@ import com.zy.utils.MyApplication;
  * @Version: 1.0
  */
 public class UserCenterApplication extends MyApplication {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        Logger logger = new Logger.Builder()
+                .setLogStrategy(LogStrategy.Logcat)
+                .setDebug(true)
+                .setMinLogType(LogType.Debug)
+                .build();
+        LogUtils.getInstance().init(logger);
+    }
 }
