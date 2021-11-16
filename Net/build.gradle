@@ -1,0 +1,57 @@
+apply plugin: 'com.android.library'
+
+def urls=rootProject.ext.urls
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        //发布的 线上版本
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String","BaseUrl","\""+urls.ReleaseServer+"\"")
+        }
+
+        debug{
+            buildConfigField("String","BaseUrl","\""+urls.DevServer+"\"")
+        }
+
+        //开发的版本
+        dev{
+            buildConfigField("String","BaseUrl","\""+urls.DevServer+"\"")
+        }
+
+        //提测版本
+        fixTest{
+            buildConfigField("String","BaseUrl","\""+urls.TestServer+"\"")
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation project(path: ':Common')
+    //Gson converter gson解析
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    //RxJava2 Adapter
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.3.0"
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+
+}

@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zy.net">
+
+    <application>
+        <meta-data android:name="authCode" android:value="8018f1fa16a15f1aa1be1851201ff1b316c12412a1201021"></meta-data>
+    </application>
+</manifest>

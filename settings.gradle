@@ -1,3 +1,5 @@
+include ':Common'
+include ':Net'
 include ':Resource'
 include ':UserCenter'
 include ':Utils'

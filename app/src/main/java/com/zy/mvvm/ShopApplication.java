@@ -1,6 +1,6 @@
 package com.zy.mvvm;
 
-import com.zy.utils.MyApplication;
+import com.zy.common.MyApplication;
 
 /**
  * @ProjectName: MVVMZG51905

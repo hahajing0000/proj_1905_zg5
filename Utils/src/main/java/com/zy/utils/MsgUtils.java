@@ -2,6 +2,8 @@ package com.zy.utils;
 
 import android.widget.Toast;
 
+import com.zy.common.MyApplication;
+
 /**
  * @ProjectName: MVVMZG51905
  * @Package: com.zy.utils

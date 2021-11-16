@@ -19,6 +19,13 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        //开发的版本
+        dev{
+        }
+
+        //提测版本
+        fixTest{
+        }
     }
 }
 

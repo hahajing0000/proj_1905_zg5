@@ -1,6 +1,6 @@
 package com.zy.usercenter;
 
-import com.zy.utils.MyApplication;
+import com.zy.common.MyApplication;
 import com.zy.utils.log.LogStrategy;
 import com.zy.utils.log.LogType;
 import com.zy.utils.log.LogUtils;
@@ -26,7 +26,7 @@ public class UserCenterApplication extends MyApplication {
 
         Logger logger = new Logger.Builder()
                 .setLogStrategy(LogStrategy.Logcat)
-                .setDebug(true)
+                .setDebug(BuildConfig.DEBUG)
                 .setMinLogType(LogType.Debug)
                 .build();
         LogUtils.getInstance().init(logger);

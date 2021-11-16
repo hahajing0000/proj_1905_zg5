@@ -6,6 +6,10 @@ ext{
             targetSdkVersion:30,
             appcompatVersion:"1.2.0",
 
-            constraintlayout:"2.0.4"
+            constraintlayout:"2.0.4",
+
+            rxjava:"2.2.6",
+            rxandroid:"2.1.0",
+            retrofit:"2.4.0"
     ]
 }
