@@ -16,8 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <EditText
-            android:text="@={user.phoneNumber}"
-            android:hint="please input phonenumber"
+            android:text="@={user.username}"
+            android:hint="please input username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></EditText>
         <EditText

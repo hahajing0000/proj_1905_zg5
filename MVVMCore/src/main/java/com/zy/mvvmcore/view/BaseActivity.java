@@ -64,4 +64,15 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void showMsg(String msg){
         MsgUtils.getInstance().showMsg(msg);
     }
+    
+    /**
+     * 从资源中获取字符串 全球化处理
+     * @param
+     * @return 
+     * @author zhangyue
+     * @time 2021/11/16 13:28
+     */ 
+    protected String getStringFromRes(int stringId){
+        return getResources().getString(stringId);
+    }
 }

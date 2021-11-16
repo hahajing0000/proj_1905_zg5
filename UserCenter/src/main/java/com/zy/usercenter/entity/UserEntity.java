@@ -3,31 +3,41 @@ package com.zy.usercenter.entity;
 /**
  * @ProjectName: MVVMZG51905
  * @Package: com.zy.usercenter.entity
- * @ClassName: UserEntity
+ * @ClassName: TestUserEntity
  * @Description:
  * @Author: 张跃 企鹅：444511958
- * @CreateDate: 2021/11/12 13:21
+ * @CreateDate: 2021/11/15 14:38
  * @UpdateUser: 张跃
- * @UpdateDate: 2021/11/12 13:21
+ * @UpdateDate: 2021/11/15 14:38
  * @UpdateRemark:
  * @Version: 1.0
  */
 public class UserEntity {
-    private int id;
-    private String phoneNumber;
-    private String  pwd;
-    private int age;
-    private String address;
 
-    public UserEntity(){}
-
-    public UserEntity(int id, String phoneNumber, String pwd, int age, String address) {
-        this.id = id;
-        this.phoneNumber = phoneNumber;
-        this.pwd = pwd;
-        this.age = age;
-        this.address = address;
+    public UserEntity() {
     }
+
+    public UserEntity(int id, String username, String pwd, String sex, String birthday) {
+        this.id = id;
+        this.username = username;
+        this.pwd = pwd;
+        this.sex = sex;
+        this.birthday = birthday;
+    }
+
+    /**
+     * id : 1
+     * username : sample string 2
+     * pwd : sample string 3
+     * sex : sample string 4
+     * birthday : sample string 5
+     */
+
+    private int id;
+    private String username;
+    private String pwd;
+    private String sex;
+    private String birthday;
 
     public int getId() {
         return id;
@@ -37,12 +47,12 @@ public class UserEntity {
         this.id = id;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getUsername() {
+        return username;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPwd() {
@@ -53,30 +63,30 @@ public class UserEntity {
         this.pwd = pwd;
     }
 
-    public int getAge() {
-        return age;
+    public String getSex() {
+        return sex;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
-    public String getAddress() {
-        return address;
+    public String getBirthday() {
+        return birthday;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 
     @Override
     public String toString() {
-        return "UserEntity{" +
+        return "TestUserEntity{" +
                 "id=" + id +
-                ", phoneNumber='" + phoneNumber + '\'' +
+                ", username='" + username + '\'' +
                 ", pwd='" + pwd + '\'' +
-                ", age=" + age +
-                ", address='" + address + '\'' +
+                ", sex='" + sex + '\'' +
+                ", birthday='" + birthday + '\'' +
                 '}';
     }
 }

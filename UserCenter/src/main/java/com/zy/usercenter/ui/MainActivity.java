@@ -3,7 +3,6 @@ package com.zy.usercenter.ui;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,7 +17,7 @@ import android.widget.TextView;
 
 import com.zy.usercenter.R;
 import com.zy.usercenter.databinding.ActivityMainBinding;
-import com.zy.usercenter.entity.TestUserEntity;
+import com.zy.usercenter.entity.UserEntity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initRV(RecyclerView rvMain) {
-        List<TestUserEntity> list=new ArrayList<>();
+        List<UserEntity> list=new ArrayList<>();
         for (int i=0;i<1000;i++){
-            list.add(new TestUserEntity(1,""+i,"","",""));
+            list.add(new UserEntity(1,""+i,"","",""));
         }
         RVAdapter adapter=new RVAdapter(this,list);
 
@@ -57,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
     class RVAdapter extends RecyclerView.Adapter<RVAdapter.RVHolder>{
 
         private Context mContext;
-        private List<TestUserEntity> source;
-        public RVAdapter(Context context,List<TestUserEntity> list){
+        private List<UserEntity> source;
+        public RVAdapter(Context context,List<UserEntity> list){
             mContext=context;
             source=list;
         }
@@ -72,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(@NonNull RVHolder holder, int position) {
-            TestUserEntity testUserEntity = source.get(position);
+            UserEntity testUserEntity = source.get(position);
             holder.tv_content.setText(testUserEntity.getUsername());
         }
 

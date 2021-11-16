@@ -1,13 +1,12 @@
 package com.zy.usercenter.viewmodel;
 
-import android.os.SystemClock;
-
 import com.zy.mvvmcore.viewmodel.BaseViewModel;
+import com.zy.net.protocol.resp.BaseRespEntity;
 import com.zy.usercenter.entity.UserEntity;
 import com.zy.usercenter.repository.UserCenterRepository;
-import com.zy.utils.ThreadUtils;
 
 import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 /**
@@ -44,7 +43,7 @@ public class UserCenterViewModel extends BaseViewModel<UserCenterRepository> {
 
     }
 
-    public MutableLiveData<UserEntity> login(String phoneNumber, String pwd){
+    public LiveData<BaseRespEntity<UserEntity>> login(String phoneNumber, String pwd){
         return mRepository.login(phoneNumber, pwd);
     }
 }
