@@ -3,7 +3,7 @@ package com.zy.net.common;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 
-import com.zy.common.MyApplication;
+import com.normal.common.MyApplication;
 
 /**
  * @ProjectName: MVVMZG51905

@@ -1,4 +1,4 @@
-package com.zy.common;
+package com.normal.common;
 
 import android.app.Application;
 import android.content.Context;

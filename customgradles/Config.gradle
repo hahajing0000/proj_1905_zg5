@@ -6,7 +6,9 @@ ext{
 
 
             //Retrofit依赖
-            retrofit: "com.squareup.retrofit2:retrofit:$versions.retrofit"
+            retrofit: "com.squareup.retrofit2:retrofit:$versions.retrofit",
+
+            commonlib:"com.github.hahajing0000.coreframwork:Common:$versions.common"
     ]
 
     urls=[

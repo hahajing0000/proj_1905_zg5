@@ -1,6 +1,6 @@
 package com.zy.usercenter;
 
-import com.zy.common.MyApplication;
+import com.normal.common.MyApplication;
 import com.zy.utils.log.LogStrategy;
 import com.zy.utils.log.LogType;
 import com.zy.utils.log.LogUtils;

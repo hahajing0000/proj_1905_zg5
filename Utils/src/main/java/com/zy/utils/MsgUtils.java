@@ -2,7 +2,7 @@ package com.zy.utils;
 
 import android.widget.Toast;
 
-import com.zy.common.MyApplication;
+import com.normal.common.MyApplication;
 
 /**
  * @ProjectName: MVVMZG51905

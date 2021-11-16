@@ -46,4 +46,6 @@ dependencies {
     //Retrofit依赖
     api libs.retrofit
 
+    api libs.commonlib
+
 }
