@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_home" android:icon="@drawable/ic_home" android:title="主页"></item>
+    <item android:id="@+id/menu_type" android:icon="@drawable/ic_type" android:title="分类"></item>
+    <item android:id="@+id/menu_find" android:icon="@drawable/ic_discover" android:title="发现"></item>
+    <item android:id="@+id/menu_troelly" android:icon="@drawable/ic_shoppingtrolley_" android:title="购物车"></item>
+    <item android:id="@+id/menu_mine" android:icon="@drawable/ic_mine" android:title="我的"></item>
+</menu>

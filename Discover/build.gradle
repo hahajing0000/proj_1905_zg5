@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-def libs=rootProject.ext.dependencies
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -19,16 +19,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-
-        //开发的版本
-        dev{
-
-        }
-
-        //提测版本
-        fixTest{
-
-        }
     }
 }
 
@@ -38,16 +28,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-
-    //RxJava依赖
-    api libs.rxjava
-    api libs.rxandroid
-
-    //Retrofit依赖
-    api libs.retrofit
-
-    api libs.commonlib
-
-    api libs.material
 
 }

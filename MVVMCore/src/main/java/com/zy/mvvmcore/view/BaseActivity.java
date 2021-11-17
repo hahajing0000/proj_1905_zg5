@@ -30,6 +30,27 @@ public abstract class BaseActivity extends AppCompatActivity {
         fullScreen();
 
         initEnv();
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        initView();
+        initData();
+        initEvent();
+    }
+
+    protected void initEvent() {
+
+    }
+
+    protected void initData() {
+
+    }
+
+    protected void initView() {
+
     }
 
     protected abstract void initEnv();
