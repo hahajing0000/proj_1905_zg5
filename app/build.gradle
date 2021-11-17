@@ -1,7 +1,6 @@
 apply plugin: 'com.android.application'
 
 def libs=rootProject.ext.dependencies;
-
 android {
     compileSdkVersion versions.compileSdkVersion
     buildToolsVersion versions.buildToolsVersion
@@ -42,6 +41,11 @@ dependencies {
     implementation project(path: ':ShopingTrolley')
     implementation project(path: ':Classify')
     implementation project(path: ':Discover')
+    
+    if (isUserCenterComponent.toBoolean()==false){
+        implementation project(path: ':UserCenter')
+    }
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

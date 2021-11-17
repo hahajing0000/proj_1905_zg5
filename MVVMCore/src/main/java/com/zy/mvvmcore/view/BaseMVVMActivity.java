@@ -39,7 +39,7 @@ public abstract class BaseMVVMActivity<VM extends BaseViewModel,Binding extends 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-
+        super.fullScreen();
         mBinding= DataBindingUtil.setContentView(this,getLayoutId());
         //要设置数据绑定的生命周期拥有者 否则livedata属性 变更无法更新UI内容
         mBinding.setLifecycleOwner(this);

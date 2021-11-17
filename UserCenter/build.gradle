@@ -1,5 +1,11 @@
 //apply plugin: 'com.android.library'
-apply plugin: 'com.android.application'
+if (isUserCenterComponent.toBoolean()){
+    apply plugin: 'com.android.application'
+}else{
+    apply plugin: 'com.android.library'
+}
+
+
 android {
     compileSdkVersion versions.compileSdkVersion
     buildToolsVersion "30.0.3"
@@ -20,7 +26,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
 
-
+        debug{
+            buildConfigField("String","BaseUrl","\""+urls.DevServer+"\"")
+        }
 
         //开发的版本
         dev{
@@ -30,6 +38,18 @@ android {
         //提测版本
         fixTest{
             buildConfigField("String","BaseUrl","\""+urls.TestServer+"\"")
+        }
+    }
+
+    sourceSets{
+        main{
+            if (isUserCenterComponent.toBoolean()){
+
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            }else{
+
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
         }
     }
 

@@ -27,7 +27,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        fullScreen();
+
 
         initEnv();
 
@@ -108,7 +108,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @author zhangyue
      * @time 2021/11/16 18:01
      */
-    private void fullScreen() {
+    protected void fullScreen() {
         //set no title bar 需要在setContentView之前调用
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         //如果上面的不起作用，可以换成下面的。
