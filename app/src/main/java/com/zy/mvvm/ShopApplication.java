@@ -1,6 +1,10 @@
 package com.zy.mvvm;
 
+import android.content.Context;
+
 import com.normal.common.MyApplication;
+
+import androidx.multidex.MultiDex;
 
 /**
  * @ProjectName: MVVMZG51905
@@ -15,4 +19,9 @@ import com.normal.common.MyApplication;
  * @Version: 1.0
  */
 public class ShopApplication extends MyApplication {
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
 }
