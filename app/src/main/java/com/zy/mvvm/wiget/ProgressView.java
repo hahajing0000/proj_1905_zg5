@@ -178,7 +178,7 @@ public class ProgressView extends View {
 
         Rect bounds=new Rect();
         String text=String.valueOf(txtValue)+"S";
-        mPaint.getTextBounds(text,0,text.length(),bounds);
+        txtPaint.getTextBounds(text,0,text.length(),bounds);
         float offSet=(bounds.top+bounds.bottom)/2;
         canvas.drawText(text,centerX,centerY-offSet,txtPaint);
 

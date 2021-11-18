@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="NewProgressView">
+        <attr name="strokeColor" format="color"></attr>
+        <attr name="strokeW" format="integer"></attr>
+        <attr name="txtColor" format="color"></attr>
+        <attr name="txtSize" format="integer"></attr>
+    </declare-styleable>
+</resources>
