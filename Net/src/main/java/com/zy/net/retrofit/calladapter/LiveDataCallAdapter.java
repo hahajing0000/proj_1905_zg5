@@ -47,6 +47,7 @@ public class LiveDataCallAdapter<R> implements CallAdapter<R, LiveData<BaseRespE
     @Override
     public LiveData<BaseRespEntity<R>> adapt(Call<R> call) {
         final MutableLiveData<BaseRespEntity<R>> liveData=new MutableLiveData<>();
+
         call.enqueue(new Callback<R>() {
             @Override
             public void onResponse(Call<R> call, Response<R> response) {

@@ -9,6 +9,8 @@ ext{
             //Retrofit依赖
             retrofit: "com.squareup.retrofit2:retrofit:$versions.retrofit",
 
+            disklrucache:"com.jakewharton:disklrucache:$versions.disklrucache",
+
             commonlib:"com.github.hahajing0000.coreframwork:Common:$versions.common",
 
             material:"com.google.android.material:material:$versions.material"

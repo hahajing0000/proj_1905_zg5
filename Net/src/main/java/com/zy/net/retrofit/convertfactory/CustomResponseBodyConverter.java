@@ -1,6 +1,7 @@
 package com.zy.net.retrofit.convertfactory;
 
 import com.google.gson.Gson;
+import com.google.gson.internal.LinkedTreeMap;
 import com.zy.net.protocol.resp.BaseRespEntity;
 import com.zy.net.protocol.resp.TokenRespEntity;
 
@@ -36,7 +37,9 @@ public class CustomResponseBodyConverter<T> implements Converter<ResponseBody, T
         if (respContent.contains("access_")){
             return (T) gson.fromJson(respContent, TokenRespEntity.class);
         }
-
+        //{code:200,data:{[{},{},{}]},msg:""}
+        //{code:-1,data:"123:{},234:{},345:{}",msg:""}
+        //LinkedTreeMap<String,String>
         BaseRespEntity baseRespEntity = gson.fromJson(respContent, BaseRespEntity.class);
         if (baseRespEntity.getCode()!=200){
             return (T) baseRespEntity;

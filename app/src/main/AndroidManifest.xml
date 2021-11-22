@@ -10,17 +10,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.TestActivity">
+        <activity android:name=".ui.element.TwoActivity"></activity>
+        <activity android:name=".ui.element.OneActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".observ.ObservActivity"></activity>
-        <activity android:name=".ui.WelcomeActivity">
+        <activity android:name=".ui.RecyclerViewActivity">
 
         </activity>
+        <activity
+            android:name=".ui.DialogActivity"
+            android:theme="@style/dialogTheme" />
+        <activity android:name=".ui.Test2Activity" />
+        <activity android:name=".ui.TestActivity" />
+        <activity android:name=".observ.ObservActivity" />
+        <activity android:name=".ui.WelcomeActivity" />
         <activity android:name=".ui.GuideActivity" />
         <activity
             android:name=".ui.MainActivity"

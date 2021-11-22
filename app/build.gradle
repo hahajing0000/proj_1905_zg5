@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 def libs=rootProject.ext.dependencies;
+
 android {
     compileSdkVersion versions.compileSdkVersion
     buildToolsVersion versions.buildToolsVersion
@@ -57,6 +58,10 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     implementation 'androidx.multidex:multidex:2.0.1'
+    implementation libs.disklrucache
+
+
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
      
 
 }
