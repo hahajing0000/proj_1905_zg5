@@ -3,20 +3,36 @@
     package="com.zy.home">
 
     <application
-        android:allowBackup="false"
         android:name="com.normal.common.MyApplication"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="Home"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.TestActivity">
+        <activity android:name=".view.DeepLinkTargetActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"></action>
+                <category android:name="android.intent.category.BROWSABLE"></category>
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <data android:scheme="xiaoming" android:host="testtest" android:path="/test">
+
+                </data>
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.H5Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".view.TestActivity"></activity>
+
+        <service
+            android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
+            android:label="dexopt"
+            android:process=":dexopt"></service>
     </application>
 
 </manifest>

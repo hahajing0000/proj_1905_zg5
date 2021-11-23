@@ -19,3 +19,65 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+#指定代码的压缩级别
+-optimizationpasses 5
+
+#包名不混合大小写
+-dontusemixedcaseclassnames
+
+#不去忽略非公共的库类
+-dontskipnonpubliclibraryclasses
+
+ #优化 不优化输入的类文件
+-dontoptimize
+
+ #预校验
+-dontpreverify
+
+ #混淆时是否记录日志
+-verbose
+
+
+#保护注解
+-keepattributes *Annotation*
+
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Fragment
+-keep public class * extends android.app.Fragment
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.preference.Preference
+
+-keepclasseswithmembernames class * {
+  native <methods>;
+}
+-keepclassmembers class * extends android.app.Activity {
+  public void *(android.view.View);
+}
+-keepclassmembers enum * {
+  public static **[] values();
+  public static ** valueOf(java.lang.String);
+}
+-keep class * implements android.os.Parcelable {
+ public static final android.os.Parcelable$Creator *;
+}
+-keepclassmembers class **.R$* {
+  *;
+}
+-keep class * extends android.view.View{*;}
+-keep class * extends android.app.Dialog{*;}
+-keep class * implements java.io.Serializable{*;}
+
+#腾讯浏览服务的混淆方案
+-dontwarn dalvik.**
+-dontwarn com.tencent.smtt.**
+
+-keep class com.tencent.smtt.** {
+    *;
+}
+
+-keep class com.tencent.tbs.** {
+    *;
+}

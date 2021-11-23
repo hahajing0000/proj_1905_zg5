@@ -45,5 +45,7 @@ public class TestActivity extends BaseMVVMActivity<RecommendTypeViewModel, HomeA
     protected void onStart() {
         super.onStart();
         mViewModel.getDatas();
+
+
     }
 }

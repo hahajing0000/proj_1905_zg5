@@ -1,6 +1,10 @@
 package com.zy.home;
 
 import com.normal.common.MyApplication;
+import com.tencent.smtt.export.external.TbsCoreSettings;
+import com.tencent.smtt.sdk.QbSdk;
+
+import java.util.HashMap;
 
 /**
  * @ProjectName: MVVMZG51905
@@ -15,4 +19,15 @@ import com.normal.common.MyApplication;
  * @Version: 1.0
  */
 class HomeApplication extends MyApplication {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        //腾讯浏览服务初始化
+        HashMap map = new HashMap();
+        map.put(TbsCoreSettings.TBS_SETTINGS_USE_SPEEDY_CLASSLOADER, true);
+        map.put(TbsCoreSettings.TBS_SETTINGS_USE_DEXLOADER_SERVICE, true);
+        QbSdk.initTbsSettings(map);
+    }
 }
