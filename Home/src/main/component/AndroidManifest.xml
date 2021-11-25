@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zy.home">
-    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+
     <application
         android:name="com.normal.common.MyApplication"
         android:allowBackup="false"
@@ -10,9 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.BiometricActivity">
+        <service
+            android:name=".view.SocketServerService"></service>
 
+        <activity android:name=".view.SocketActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".view.FingerprintActivity" />
+        <activity android:name=".view.BiometricActivity"></activity>
         <activity android:name=".view.DeepLinkTargetActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -23,16 +34,10 @@
                 <data
                     android:host="testtest"
                     android:path="/test"
-                    android:scheme="xiaoming"></data>
+                    android:scheme="xiaoming" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.H5Activity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".view.H5Activity" />
         <activity android:name=".view.TestActivity" />
 
         <service

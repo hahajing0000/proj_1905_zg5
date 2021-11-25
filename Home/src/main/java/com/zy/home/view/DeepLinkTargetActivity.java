@@ -9,7 +9,9 @@ import android.widget.Toast;
 
 import com.zy.home.R;
 import com.zy.home.utils.AESUtils;
+import com.zy.home.utils.MD5Utils;
 import com.zy.home.utils.RSAUtils;
+import com.zy.home.utils.SHAUtils;
 
 import java.security.KeyPair;
 import java.security.PrivateKey;
@@ -54,15 +56,26 @@ public class DeepLinkTargetActivity extends AppCompatActivity {
 //            PublicKey publicKey = RSAUtils.getPublicKey("publicKey");
 //            PrivateKey privateKey = RSAUtils.getPrivateKey("publicKey");
 
-            KeyPair keyPair = RSAUtils.generateRSAKeyPair(1024);
-            PublicKey publicKey = keyPair.getPublic();
-            PrivateKey privateKey = keyPair.getPrivate();
+//            KeyPair keyPair = RSAUtils.generateRSAKeyPair(1024);
+//            PublicKey publicKey = keyPair.getPublic();
+//            PrivateKey privateKey = keyPair.getPrivate();
+//
+//            byte[] encrypt = RSAUtils.encrypt(str, publicKey);
+//            String encryptStr=new String(encrypt,"UTF-8");
+//            byte[] decrypt = RSAUtils.decrypt(encrypt, privateKey);
+//            String decryptStr=new String(decrypt,"UTF-8");
+//            Log.d("123", String.format("encrypt => %s\n decrypt => %s\n",encryptStr,decryptStr));
 
-            byte[] encrypt = RSAUtils.encrypt(str, publicKey);
-            String encryptStr=new String(encrypt,"UTF-8");
-            byte[] decrypt = RSAUtils.decrypt(encrypt, privateKey);
-            String decryptStr=new String(decrypt,"UTF-8");
-            Log.d("123", String.format("encrypt => %s\n decrypt => %s\n",encryptStr,decryptStr));
+            String md5 = MD5Utils.md5(str);
+            String md5_2=MD5Utils.md5(str+" ");
+            String sha1 = SHAUtils.sha1(str);
+            String sha224 = SHAUtils.sha224(str);
+            String sha384 = SHAUtils.sha384(str);
+            String sha512 = SHAUtils.sha512(str);
+
+            Log.d("123", "onCreate: ");
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }

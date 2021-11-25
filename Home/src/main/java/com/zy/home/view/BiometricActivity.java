@@ -44,7 +44,7 @@ public class BiometricActivity extends AppCompatActivity {
     private Button biometricLogin;
 
     private CancellationSignal mCancellationSignal;
-    private FingerprintManager.AuthenticationCallback mSelfCancelled;
+    private FingerprintManager.AuthenticationCallback callback;
     private KeyStore keyStore;
     private Cipher mCipher;
 
@@ -122,7 +122,7 @@ public class BiometricActivity extends AppCompatActivity {
 
         if (testFingerprint()){
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-                mSelfCancelled = new FingerprintManager.AuthenticationCallback() {
+                callback = new FingerprintManager.AuthenticationCallback() {
                     @Override
                     public void onAuthenticationError(int errorCode, CharSequence errString) {
                         //多次指纹密码验证错误后，进入此方法；并且，不可再验（短时间）
@@ -137,6 +137,8 @@ public class BiometricActivity extends AppCompatActivity {
 
                     @Override
                     public void onAuthenticationSucceeded(FingerprintManager.AuthenticationResult result) {
+
+                        Log.d("123", "onAuthenticationSucceeded: ...");
                         //指纹密码验证成功
                         Toast.makeText(BiometricActivity.this, "Success", Toast.LENGTH_SHORT).show();
                     }
@@ -153,13 +155,12 @@ public class BiometricActivity extends AppCompatActivity {
 
         biometricLogin.setOnClickListener(new View.OnClickListener() {
 
-
-
             @Override
             public void onClick(View v) {
                 mCancellationSignal = new CancellationSignal();
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    fingerprintManager.authenticate(new FingerprintManager.CryptoObject(mCipher), mCancellationSignal, 0, mSelfCancelled, null);
+                    //底部弹框
+                    fingerprintManager.authenticate(new FingerprintManager.CryptoObject(mCipher), mCancellationSignal, 0, callback, null);
                 }
             }
         });

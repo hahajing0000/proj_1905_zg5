@@ -84,7 +84,6 @@ public class RSAUtils {
      * @throws Exception
      */
     public static PublicKey getPublicKey(String key) throws Exception {
-        Log.d("123","key -> "+key);
 //        byte[] keyBytes;
 //        keyBytes = (new BASE64Decoder()).decodeBuffer(key);
 //        String encode = Base64Utils.encode(key.getBytes());
