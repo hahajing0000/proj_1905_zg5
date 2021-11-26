@@ -49,6 +49,29 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    flavorDimensions "channcel"
+    productFlavors{
+        xiaomi{
+            manifestPlaceholders = [CHANNEL_VALUE: "xiaomi"]
+
+        }
+
+        huawei{
+            manifestPlaceholders = [CHANNEL_VALUE: "huawei"]
+        }
+
+        oppo{
+            manifestPlaceholders = [CHANNEL_VALUE: "oppo"]
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
 }
 
 dependencies {

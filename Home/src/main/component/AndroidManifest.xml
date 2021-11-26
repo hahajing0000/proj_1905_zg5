@@ -12,19 +12,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.ShopingTrolleyActivity">
+        <activity android:name=".view.ChannelActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".view.ShopingTrolleyActivity">
+
+        </activity>
 
         <service android:name=".view.SocketServerService" />
 
-        <activity android:name=".view.SocketActivity">
-
-        </activity>
+        <activity android:name=".view.SocketActivity"></activity>
         <activity android:name=".view.FingerprintActivity" />
         <activity android:name=".view.BiometricActivity" />
         <activity android:name=".view.DeepLinkTargetActivity">
@@ -47,6 +48,10 @@
             android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
             android:label="dexopt"
             android:process=":dexopt" />
+
+        <meta-data
+            android:name="ChannelName"
+            android:value="${CHANNEL_VALUE}" />
     </application>
 
 </manifest>
