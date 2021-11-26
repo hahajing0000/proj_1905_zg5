@@ -12,18 +12,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <service
-            android:name=".view.SocketServerService"></service>
-
-        <activity android:name=".view.SocketActivity">
+        <activity android:name=".view.ShopingTrolleyActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".view.SocketServerService" />
+
+        <activity android:name=".view.SocketActivity">
+
+        </activity>
         <activity android:name=".view.FingerprintActivity" />
-        <activity android:name=".view.BiometricActivity"></activity>
+        <activity android:name=".view.BiometricActivity" />
         <activity android:name=".view.DeepLinkTargetActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
